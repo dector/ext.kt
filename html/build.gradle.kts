@@ -5,11 +5,18 @@ plugins {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(Deps.kotlin.jdk8)
+    implementation(Deps.kotlinx.html)
 
-    testImplementation(Deps.kotlin_test)
+    testImplementation(Deps.kotlintest)
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions.freeCompilerArgs = listOf(
+        "-XXLanguage:+InlineClasses"
+    )
 }

@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version Versions.kotlin
+    kotlin("jvm") version Versions.kotlin.version
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(Deps.kotlin.jdk8)
 
-    testImplementation(Deps.kotlin_test)
+    testImplementation(Deps.kotlintest)
 }
 
 allprojects {
